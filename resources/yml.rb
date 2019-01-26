@@ -9,7 +9,7 @@ action :create do
   puts stack.inspect
 
   puts "have network"
-  puts new_source.network
+  puts new_resource.network
 
   stack['networks'].each { |network|
     puts network.inspect
