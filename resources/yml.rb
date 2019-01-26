@@ -24,17 +24,23 @@ action :create do
     volumes = []
     ports = []
 
-    stack_volumes.each { |volume|
-      #puts volume
-      volumes.push(volume)
-    }
+    if !stack_volumes.nil?
+      stack_volumes.each { |volume|
+        #puts volume
+        volumes.push(volume)
+      }
+    end
 
-    stack_ports.each { |port|
-      ports.push(port)
-    }
+    if !stack_ports.nil?
+      stack_ports.each { |port|
+        ports.push(port)
+      }
+    end
 
-    stack_networks.each { |network|
-    }
+    if !stack_networks.nil?
+      stack_networks.each { |network|
+      }
+    end
 
     image, tag = image_and_tag.split(':')
     puts image
