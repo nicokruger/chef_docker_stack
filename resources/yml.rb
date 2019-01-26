@@ -1,6 +1,6 @@
 require 'yaml'
 property :file_name, String, default: ''
-property :network, String, default: nil
+property :network, String, required: false
 
 action :create do
   puts "STACK PATH"
