@@ -3,8 +3,8 @@ property :file_name, String, default: ''
 
 action :create do
   puts "STACK PATH"
-  puts new_source.file_name
-  stack = YAML.load_file(new_source.file_name)
+  puts new_resource.file_name
+  stack = YAML.load_file(new_resource.file_name)
   puts stack.inspect
 
   stack['networks'].each { |network|
