@@ -1,11 +1,15 @@
 require 'yaml'
 property :file_name, String, default: ''
+property :network, String, default: nil
 
 action :create do
   puts "STACK PATH"
   puts new_resource.file_name
   stack = YAML.load_file(new_resource.file_name)
   puts stack.inspect
+
+  puts "have network"
+  puts new_source.network
 
   stack['networks'].each { |network|
     puts network.inspect
@@ -63,6 +67,7 @@ action :create do
       port ports
       action :run
       volumes volumes
+      network_mode new_resource.network
     end
 
   }
