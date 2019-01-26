@@ -1,3 +1,4 @@
+depends 'docker'
 name 'docker_stack'
 maintainer 'The Authors'
 maintainer_email 'you@example.com'
