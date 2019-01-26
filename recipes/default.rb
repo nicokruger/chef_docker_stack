@@ -20,13 +20,13 @@ end
 puts 'COOKBOOK NAME'
 puts cookbook_name
 puts 'DATA'
-puts nodes.inspect
+puts node.inspect
 
 stackPath = File.join(
   Chef::Config[:file_cache_path],
   'cookbooks',
   cookbook_name,
-  nodes[cookbook_name]['stack']
+  node[cookbook_name]['stack']
 )
 puts "STACK PATH"
 puts stackPath
